@@ -1,0 +1,353 @@
+{
+    "info": {
+        "_postman_id": "7b898d42-7c98-4c32-b95b-d65136fcb47f",
+        "name": "Rotas",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [{
+            "name": "Busca Usuários",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/user?orderBy=name&orientation=desc",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "user"
+                    ],
+                    "query": [{
+                            "key": "name",
+                            "value": "Teste1",
+                            "disabled": true
+                        },
+                        {
+                            "key": "cpf",
+                            "value": "00155544460",
+                            "disabled": true
+                        },
+                        {
+                            "key": "orderBy",
+                            "value": "name"
+                        },
+                        {
+                            "key": "orientation",
+                            "value": "desc"
+                        },
+                        {
+                            "key": "itensPerPage",
+                            "value": "1",
+                            "disabled": true
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Busca usuário pelo Id",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/user/2",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "user",
+                        "2"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Adiciona usuário",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/user?cpf=12345678901&name=Teste2&email=teste2@teste2com",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "user"
+                    ],
+                    "query": [{
+                            "key": "cpf",
+                            "value": "12345678901"
+                        },
+                        {
+                            "key": "name",
+                            "value": "Teste2"
+                        },
+                        {
+                            "key": "email",
+                            "value": "teste2@teste2com"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Atualiza usuário",
+            "request": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/user?id=2&name=TesteUp&cpf=12345678901&email=teste@update.com",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "user"
+                    ],
+                    "query": [{
+                            "key": "id",
+                            "value": "2"
+                        },
+                        {
+                            "key": "name",
+                            "value": "TesteUp"
+                        },
+                        {
+                            "key": "cpf",
+                            "value": "12345678901"
+                        },
+                        {
+                            "key": "email",
+                            "value": "teste@update.com"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Deleta usuário",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/user/3",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "user",
+                        "3"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Busca bancos",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/bank?orderBy=name&orientation=desc&itensPerPage=1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "bank"
+                    ],
+                    "query": [{
+                            "key": "name",
+                            "value": "BancoA",
+                            "disabled": true
+                        },
+                        {
+                            "key": "orderBy",
+                            "value": "name"
+                        },
+                        {
+                            "key": "orientation",
+                            "value": "desc"
+                        },
+                        {
+                            "key": "itensPerPage",
+                            "value": "1"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Adiciona conta bancaria para um usuário",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/user/2/bank_account?arrayCollection=[{\"account_name\":\"testeA\",\"agency\":\"testeA\",\"agency_digit\":\"1\",\"account_number\":\"0102030405\",\"account_digit\":\"1\",\"account_type\":\"CC\",\"app_bank_id\":\"1\"},{\"account_name\":\"testeB\",\"agency\":\"testeB\",\"agency_digit\":\"2\",\"account_number\":\"0504030201\",\"account_digit\":\"2\",\"account_type\":\"CP\",\"app_bank_id\":\"2\"}]",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "user",
+                        "2",
+                        "bank_account"
+                    ],
+                    "query": [{
+                        "key": "arrayCollection",
+                        "value": "[{\"account_name\":\"testeA\",\"agency\":\"testeA\",\"agency_digit\":\"1\",\"account_number\":\"0102030405\",\"account_digit\":\"1\",\"account_type\":\"CC\",\"app_bank_id\":\"1\"},{\"account_name\":\"testeB\",\"agency\":\"testeB\",\"agency_digit\":\"2\",\"account_number\":\"0504030201\",\"account_digit\":\"2\",\"account_type\":\"CP\",\"app_bank_id\":\"2\"}]"
+                    }]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Busca contas bancarias associadas a um usuário",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/user/2/bank_account",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "user",
+                        "2",
+                        "bank_account"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Busca conta bancaria especifica e associdada a um usuário",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/user/2/bank_account/2",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "user",
+                        "2",
+                        "bank_account",
+                        "2"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Atualiza conta bancaria de um usuário",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/user/2/bank_account/2?account_name=testeB2&agency=testx2&agency_digit=4&account_number=0504030201&account_digit=3&account_type=CP",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "user",
+                        "2",
+                        "bank_account",
+                        "2"
+                    ],
+                    "query": [{
+                            "key": "account_name",
+                            "value": "testeB2"
+                        },
+                        {
+                            "key": "agency",
+                            "value": "testx2"
+                        },
+                        {
+                            "key": "agency_digit",
+                            "value": "4"
+                        },
+                        {
+                            "key": "account_number",
+                            "value": "0504030201"
+                        },
+                        {
+                            "key": "account_digit",
+                            "value": "3"
+                        },
+                        {
+                            "key": "account_type",
+                            "value": "CP"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Deleta conta bancaria de um usuário",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/user/2/bank_account/2",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "user",
+                        "2",
+                        "bank_account",
+                        "2"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Busca banco pelo Id",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/bank/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "bank",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
