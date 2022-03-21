@@ -3,18 +3,21 @@
 
 #Como executar:
 
-# (1) Edite o .env com os dados do seu banco de dados
+# (1) Instale as dependências do projeto com o comando:
+composer install
 
-# (2) Para criar o banco de dados execute o comando:
+# (2) Edite o .env com os dados do seu banco de dados
+
+# (3) Para criar o banco de dados execute o comando:
 php bin/console doctrine:database:create
 
-# (3) Para criar as tabelas execute o comando:
+# (4) Para criar as tabelas execute o comando:
 php bin/console doctrine:migrations:migrate
 
-# (4) Para popular o banco de dados execute o comando:
+# (5) Para popular o banco de dados execute o comando:
 php bin/console doctrine:fixtures:load
 
-# (5) para executar o projeto execute o comando:
+# (6) para executar o projeto execute o comando:
 php -S localhost:8080 -t public
 
-# (6) Segue junto com o projeto o arquivo Rotas.postman_collection.json para testar a API no postman
+# (7) Segue junto com o projeto o arquivo Rotas.postman_collection.json para testar a API no postman
